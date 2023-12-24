@@ -1,0 +1,6 @@
+[submodule "external/boost"]
+	path = external/boost
+	url = https://github.com/boostorg/boost.git
+[submodule "external/cryptopp"]
+	path = external/cryptopp
+	url = https://github.com/abdes/cryptopp-cmake

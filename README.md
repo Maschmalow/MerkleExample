@@ -10,9 +10,9 @@ CMake usage, at root directory:
 `cmake -DCMAKE_BUILD_TYPE=Release -G "Unix Makefiles" .`  
 Replace `Unix Makefiles` according to your build system. Then run `cmake --build <build_dir> --target <target>`
 
-The targets can be `tests` or`MerkleLib`.
+The targets can be `tests` or`merklelib`.
 
-The documentation can be built locally with MkDocs. To do so, install Mkdocs, its plugin Mkdoxy 
+The documentation can be built locally with MkDocs. To do so, install [Mkdocs](https://www.mkdocs.org/), its plugin [Mkdoxy](https://mkdoxy.kubaandrysek.cz/) 
 (and doxygen as well if you don't already have it), and run `mkdocs serve` to build the site and serve it locally.
 
 

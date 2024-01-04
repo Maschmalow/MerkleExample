@@ -10,7 +10,7 @@
 
 
 /**
- *  Main namespace
+ *  MerkleLib namespace
  */
 namespace merkle {
 
@@ -31,7 +31,7 @@ namespace merkle {
         }
 
         /**
-         * return true iff this class instance is a valid membership proof for \p elem against the set digest \p root
+         * Return true iff this class instance is a valid membership proof for \p elem against the set digest \p root.
          */
         template<class T>
         bool verify(Hash root, const T& elem) const {
@@ -101,6 +101,7 @@ namespace merkle {
      * @return the root of the merkle tree
      */
     template<std::ranges::forward_range T, class P>
+        requires std::forward_iterator<std::ranges::iterator_t<P>>
     Hash computeMerkleRoot(T&& leaves, P& proofs) {
         proofs = P(leaves.size());
         return computeMerkleRoot(leaves, proofs.begin());

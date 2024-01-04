@@ -42,7 +42,7 @@ namespace merkle {
 
 
     /**\interface iterable
-     * \brief Concept modelling types that supports Range-based for loop
+     * \brief Concept modelling types that supports Range-based for loop.
      */
     template<class T>
     concept iterable = requires(T &in) {
@@ -54,7 +54,7 @@ namespace merkle {
 
 
     /**\interface implementsAddToHash
-     * \brief Concept modelling types implementing addToHash()
+     * \brief Concept modelling types implementing addToHash().
      */
     template<class T>
     concept implementsAddToHash = requires(const T x, Hasher &in) {
@@ -97,7 +97,7 @@ namespace merkle {
 
 
         /**
-         * arithmetic type are \ref directlyHashable  using the sizeof() operator.
+         * Arithmetic type are \ref directlyHashable  using the sizeof() operator.
          */
         template<directlyHashable T>
         Hasher &input(const T &in) {

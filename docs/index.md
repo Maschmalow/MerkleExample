@@ -8,16 +8,16 @@ for convenience.
 This library is header-only, which is required anyway because almost all the code is templated.
 All the code is in the namespace [merkle](merkleexample/namespacemerkle.md)
 
-- [crypto.hpp](merkleexample/crypto_8hpp.md) contains all crypto related code, in this case it is merely a wrapper
-  around cryptopp hash
-- [merkle.hpp](merkleexample/merkle_8hpp.md) contains the library code.
+- [crypto.hpp](merkleexample/crypto_8hpp.md) contains all crypto related code, in this case a wrapper
+  around cryptopp hashing.
+- [merkle.hpp](merkleexample/merkle_8hpp.md) contains the code co compute Merkle trees and verify membership proofs.
 
 ## Usage
 
 ### Merkle algorithms
 
 The main algorithm to compute the root of a Merkle tree is [computeMerkleRoot()](merkleexample/namespacemerkle.md#public-functions). This algorithm requires an output
-container to receive the membership proofs for all elements.
+container to receive the [MerkleMembershipProof](merkleexample/classmerkle_1_1_merkle_membership_proof.md) for all elements.
 
 ```C++
   std::vector<int> leaves{ 0, 1, 2 };

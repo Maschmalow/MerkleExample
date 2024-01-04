@@ -41,6 +41,8 @@ build
 # Data dir in docker
 data
 
+site
+
 /.idea
 /cmake-build-*
 .clangd

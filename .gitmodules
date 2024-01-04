@@ -4,3 +4,6 @@
 [submodule "external/cryptopp"]
 	path = external/cryptopp
 	url = https://github.com/abdes/cryptopp-cmake
+[submodule "external/Catch2"]
+	path = external/Catch2
+	url = https://github.com/catchorg/Catch2

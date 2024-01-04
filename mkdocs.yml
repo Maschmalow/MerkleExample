@@ -1,0 +1,21 @@
+site_name: Merkle example Documentation
+site_url: https://example.com/
+nav:
+  - Home: index.md
+  - Reference:
+     - 'Merkle Namespace': 'merkleexample/namespacemerkle.md'
+     - 'Class List': 'merkleexample/annotated.md'
+     - 'Files': 'merkleexample/files.md'
+     - 'Links': 'merkleexample/links.md'
+theme: readthedocs
+
+plugins:
+  - mkdoxy:
+      projects:
+        merkleexample: # name of project must be alphanumeric + numbers (without spaces)
+          src-dirs: MerkleLib  # path to source code (support multiple paths separated by space) => INPUT
+          full-doc: True # if you want to generate full documentation
+          doxy-cfg: # standard doxygen configuration (key: value)
+            FILE_PATTERNS: "*.cpp *.hpp" # specify file patterns to filter out
+            RECURSIVE: True # recursive search in source directories
+            EXTRACT_ALL: True

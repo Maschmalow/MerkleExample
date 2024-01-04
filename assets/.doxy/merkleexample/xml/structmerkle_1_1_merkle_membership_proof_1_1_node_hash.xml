@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="structmerkle_1_1_merkle_membership_proof_1_1_node_hash" kind="struct" language="C++" prot="private">
+    <compoundname>merkle::MerkleMembershipProof::NodeHash</compoundname>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structmerkle_1_1_merkle_membership_proof_1_1_node_hash_1add5eecbf2eaf321b864dfa747dbd0091" prot="public" static="no" mutable="no">
+        <type><ref refid="namespacemerkle_1ab2e94778984fb87a71724478c0f9dc68" kindref="member">Hash</ref></type>
+        <definition>Hash merkle::MerkleMembershipProof::NodeHash::value</definition>
+        <argsstring></argsstring>
+        <name>value</name>
+        <qualifiedname>merkle::MerkleMembershipProof::NodeHash::value</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MerkleLib/include/merklelib/merkle.hpp" line="51" column="18" bodyfile="MerkleLib/include/merklelib/merkle.hpp" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmerkle_1_1_merkle_membership_proof_1_1_node_hash_1a3230670f7f08054a5a74c43936f34e0b" prot="public" static="no" mutable="no">
+        <type><ref refid="classmerkle_1_1_merkle_membership_proof_1acd2066d1c80db08ed30048b60d3ea7f4" kindref="member">NodeChoice</ref></type>
+        <definition>NodeChoice merkle::MerkleMembershipProof::NodeHash::side</definition>
+        <argsstring></argsstring>
+        <name>side</name>
+        <qualifiedname>merkle::MerkleMembershipProof::NodeHash::side</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MerkleLib/include/merklelib/merkle.hpp" line="52" column="24" bodyfile="MerkleLib/include/merklelib/merkle.hpp" bodystart="52" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="MerkleLib/include/merklelib/merkle.hpp" line="50" column="9" bodyfile="MerkleLib/include/merklelib/merkle.hpp" bodystart="50" bodyend="53"/>
+    <listofallmembers>
+      <member refid="structmerkle_1_1_merkle_membership_proof_1_1_node_hash_1a3230670f7f08054a5a74c43936f34e0b" prot="public" virt="non-virtual"><scope>merkle::MerkleMembershipProof::NodeHash</scope><name>side</name></member>
+      <member refid="structmerkle_1_1_merkle_membership_proof_1_1_node_hash_1add5eecbf2eaf321b864dfa747dbd0091" prot="public" virt="non-virtual"><scope>merkle::MerkleMembershipProof::NodeHash</scope><name>value</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="dir_1719d5dff123115991d6e0babc0b7b32" kind="dir">
+    <compoundname>MerkleLib</compoundname>
+    <innerdir refid="dir_e5730d5bb186076c7325630a058c9a00">MerkleLib/include</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="MerkleLib/"/>
+  </compounddef>
+</doxygen>

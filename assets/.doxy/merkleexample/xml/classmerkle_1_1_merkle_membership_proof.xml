@@ -1,0 +1,131 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="classmerkle_1_1_merkle_membership_proof" kind="class" language="C++" prot="public">
+    <compoundname>merkle::MerkleMembershipProof</compoundname>
+    <includes refid="merkle_8hpp" local="no">merkle.hpp</includes>
+    <innerclass refid="structmerkle_1_1_merkle_membership_proof_1_1_node_hash" prot="private">merkle::MerkleMembershipProof::NodeHash</innerclass>
+    <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classmerkle_1_1_merkle_membership_proof_1acd2066d1c80db08ed30048b60d3ea7f4" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>NodeChoice</name>
+        <qualifiedname>merkle::MerkleMembershipProof::NodeChoice</qualifiedname>
+        <enumvalue id="classmerkle_1_1_merkle_membership_proof_1acd2066d1c80db08ed30048b60d3ea7f4a684d325a7303f52e64011467ff5c5758" prot="public">
+          <name>LEFT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classmerkle_1_1_merkle_membership_proof_1acd2066d1c80db08ed30048b60d3ea7f4a21507b40c80068eda19865706fdc2403" prot="public">
+          <name>RIGHT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MerkleLib/include/merklelib/merkle.hpp" line="23" column="9" bodyfile="MerkleLib/include/merklelib/merkle.hpp" bodystart="23" bodyend="25"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classmerkle_1_1_merkle_membership_proof_1a373f5857d91c1496ae070e321ef3b493" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; NodeHash &gt;</type>
+        <definition>std::vector&lt;NodeHash&gt; merkle::MerkleMembershipProof::path</definition>
+        <argsstring></argsstring>
+        <name>path</name>
+        <qualifiedname>merkle::MerkleMembershipProof::path</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MerkleLib/include/merklelib/merkle.hpp" line="55" column="21" bodyfile="MerkleLib/include/merklelib/merkle.hpp" bodystart="55" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classmerkle_1_1_merkle_membership_proof_1a1fd7791a97e181aaa57793a86ee635bc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>merkle::MerkleMembershipProof::MerkleMembershipProof</definition>
+        <argsstring>()=default</argsstring>
+        <name>MerkleMembershipProof</name>
+        <qualifiedname>merkle::MerkleMembershipProof::MerkleMembershipProof</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MerkleLib/include/merklelib/merkle.hpp" line="27" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classmerkle_1_1_merkle_membership_proof_1a5ff2f0e3308c26f91d3769861fe0ece6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void merkle::MerkleMembershipProof::append</definition>
+        <argsstring>(Hash h, NodeChoice c)</argsstring>
+        <name>append</name>
+        <qualifiedname>merkle::MerkleMembershipProof::append</qualifiedname>
+        <param>
+          <type><ref refid="namespacemerkle_1ab2e94778984fb87a71724478c0f9dc68" kindref="member">Hash</ref></type>
+          <declname>h</declname>
+        </param>
+        <param>
+          <type><ref refid="classmerkle_1_1_merkle_membership_proof_1acd2066d1c80db08ed30048b60d3ea7f4" kindref="member">NodeChoice</ref></type>
+          <declname>c</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MerkleLib/include/merklelib/merkle.hpp" line="29" column="14" bodyfile="MerkleLib/include/merklelib/merkle.hpp" bodystart="29" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="classmerkle_1_1_merkle_membership_proof_1a9ddcb1eefd2a7414a5d131e354416df0" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool merkle::MerkleMembershipProof::verify</definition>
+        <argsstring>(Hash root, const T &amp;elem) const</argsstring>
+        <name>verify</name>
+        <qualifiedname>merkle::MerkleMembershipProof::verify</qualifiedname>
+        <param>
+          <type><ref refid="namespacemerkle_1ab2e94778984fb87a71724478c0f9dc68" kindref="member">Hash</ref></type>
+          <declname>root</declname>
+        </param>
+        <param>
+          <type>const T &amp;</type>
+          <declname>elem</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>return true iff this class instance is a valid membership proof for <computeroutput>elem</computeroutput> against the set digest <computeroutput>root</computeroutput> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MerkleLib/include/merklelib/merkle.hpp" line="37" column="14" bodyfile="MerkleLib/include/merklelib/merkle.hpp" bodystart="37" bodyend="47"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Class holding a membership proof. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="MerkleLib/include/merklelib/merkle.hpp" line="21" column="5" bodyfile="MerkleLib/include/merklelib/merkle.hpp" bodystart="21" bodyend="56"/>
+    <listofallmembers>
+      <member refid="classmerkle_1_1_merkle_membership_proof_1a5ff2f0e3308c26f91d3769861fe0ece6" prot="public" virt="non-virtual"><scope>merkle::MerkleMembershipProof</scope><name>append</name></member>
+      <member refid="classmerkle_1_1_merkle_membership_proof_1a1fd7791a97e181aaa57793a86ee635bc" prot="public" virt="non-virtual"><scope>merkle::MerkleMembershipProof</scope><name>MerkleMembershipProof</name></member>
+      <member refid="classmerkle_1_1_merkle_membership_proof_1acd2066d1c80db08ed30048b60d3ea7f4" prot="public" virt="non-virtual"><scope>merkle::MerkleMembershipProof</scope><name>NodeChoice</name></member>
+      <member refid="classmerkle_1_1_merkle_membership_proof_1a373f5857d91c1496ae070e321ef3b493" prot="private" virt="non-virtual"><scope>merkle::MerkleMembershipProof</scope><name>path</name></member>
+      <member refid="classmerkle_1_1_merkle_membership_proof_1a9ddcb1eefd2a7414a5d131e354416df0" prot="public" virt="non-virtual"><scope>merkle::MerkleMembershipProof</scope><name>verify</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

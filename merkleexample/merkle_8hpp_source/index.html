@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://example.com/merkleexample/merkle_8hpp_source/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>File merkle.hpp - Merkle example Documentation</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "File merkle.hpp";
+        var mkdocs_page_input_path = "merkleexample\\merkle_8hpp_source.md";
+        var mkdocs_page_url = "/merkleexample/merkle_8hpp_source/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Merkle example Documentation
+        </a>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Reference</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../namespacemerkle/">Merkle Namespace</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../annotated/">Class List</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../files/">Files</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../links/">Links</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Merkle example Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">File merkle.hpp</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="file-merklehpp">File merkle.hpp</h1>
+<p><a href="../files/"><strong>File List</strong></a> <strong>&gt;</strong> <a href="../dir_e5730d5bb186076c7325630a058c9a00/"><strong>include</strong></a> <strong>&gt;</strong> <a href="../dir_5209bc8e00a5022dcb375bc5a32c3450/"><strong>merklelib</strong></a> <strong>&gt;</strong> <a href="../merkle_8hpp/"><strong>merkle.hpp</strong></a></p>
+<p><a href="../merkle_8hpp/">Go to the documentation of this file</a></p>
+<pre><code class="language-C++">
+#pragma once
+#include &lt;numeric&gt;
+#include &quot;merklelib/crypto.hpp&quot;
+
+
+
+
+namespace merkle {
+
+
+    class MerkleMembershipProof {
+    public:
+        enum class NodeChoice {
+            LEFT, RIGHT
+        };
+
+        MerkleMembershipProof() = default;
+
+        void append(Hash h, NodeChoice c) {
+            path.push_back({.value=h, .side=c});
+        }
+
+        template&lt;class T&gt;
+        bool verify(Hash root, const T&amp; elem) const {
+
+            auto recomputePath = [](const Hash&amp; acc, const NodeHash&amp; proof) -&gt; Hash {
+                if (proof.side == NodeChoice::RIGHT) // the hash value in path is on the right
+                    return Hasher().input(acc).input(proof.value).end();
+                else //currentNode.second == NodeChoice::LEFT
+                    return Hasher().input(proof.value).input(acc).end();
+            };
+
+            return std::accumulate(path.begin(), path.end(), Hasher::apply(elem), recomputePath) == root;
+        }
+
+    private:
+        struct NodeHash {
+            Hash value;
+            NodeChoice side;
+        };
+
+        std::vector&lt;NodeHash&gt; path;
+    };
+
+
+    template&lt;std::ranges::forward_range T, std::forward_iterator P&gt;
+    requires std::same_as&lt;MerkleMembershipProof, typename std::iterator_traits&lt;P&gt;::value_type&gt;
+    Hash computeMerkleRoot(T&amp;&amp; leaves, const P proofs) {
+        const auto&amp; begin = std::ranges::begin(leaves), end = std::ranges::end(leaves); //mostly for readability
+
+        if (std::ranges::size(leaves) == 1) {
+            return Hasher::apply(*begin);
+        }
+
+        // note that there is no *explicit* requirement in std::random_access_iterator&lt;&gt; to support division on iter_diff (which midpoint does).
+        // But there are other parts, eg., in std::lower_bound() where this is done *and* random_access_iterator guarantees constant time operation.
+        auto middle = begin + (end - begin) / 2;
+
+        Hash left = computeMerkleRoot(std::ranges::subrange(begin, middle), proofs);
+        Hash right = computeMerkleRoot(std::ranges::subrange(middle, end), proofs + (middle - begin));
+
+        P it = proofs;
+        for (auto i = begin; i &lt; middle; i++) {
+            it-&gt;append(right, MerkleMembershipProof::NodeChoice::RIGHT);
+            it++;
+        }
+        for (auto i = middle; i &lt; end; i++) {
+            it-&gt;append(left, MerkleMembershipProof::NodeChoice::LEFT);
+            it++;
+        }
+
+        return Hasher().input(left).input(right).end();
+    }
+
+
+    template&lt;std::ranges::forward_range T, class P&gt;
+    Hash computeMerkleRoot(T&amp;&amp; leaves, P&amp; proofs) {
+        proofs = P(leaves.size());
+        return computeMerkleRoot(leaves, proofs.begin());
+    }
+
+
+}
+
+
+</code></pre>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

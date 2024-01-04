@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="description" content="None" /><link rel="canonical" href="https://example.com/" />
+      <link rel="shortcut icon" href="img/favicon.ico" />
+    <title>Merkle example Documentation</title>
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Home";
+        var mkdocs_page_input_path = "index.md";
+        var mkdocs_page_url = "/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="." class="icon icon-home"> Merkle example Documentation
+        </a>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href=".">Home</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#architecture">Architecture</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#usage">Usage</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#merkle-algorithms">Merkle algorithms</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#cryptographic-operations">Cryptographic operations</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Reference</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="merkleexample/namespacemerkle/">Merkle Namespace</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="merkleexample/annotated/">Class List</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="merkleexample/files/">Files</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="merkleexample/links/">Links</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href=".">Merkle example Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Home</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="welcome-to-merkleexample">Welcome to MerkleExample</h1>
+<p>Please note that this is a somewhat over-engineered example project, meaning that this code tends to trade readability
+for convenience.</p>
+<h2 id="architecture">Architecture</h2>
+<p>This library is header-only, which is required anyway because almost all the code is templated.
+All the code is in the namespace <a href="merkleexample/namespacemerkle/">merkle</a></p>
+<ul>
+<li><a href="merkleexample/crypto_8hpp/">crypto.hpp</a> contains all crypto related code, in this case it is merely a wrapper
+  around cryptopp hash</li>
+<li><a href="merkleexample/merkle_8hpp/">merkle.hpp</a> contains the library code.</li>
+</ul>
+<h2 id="usage">Usage</h2>
+<h3 id="merkle-algorithms">Merkle algorithms</h3>
+<p>The main algorithm to compute the root of a Merkle tree is <a href="merkleexample/namespacemerkle/#public-functions">computeMerkleRoot()</a>. This algorithm requires an output
+container to receive the membership proofs for all elements.</p>
+<pre><code class="language-C++">  std::vector&lt;int&gt; leaves{ 0, 1, 2 };
+  std::vector&lt;MerkleMembershipProof&gt; proofs;
+  Hash root = computeMerkleRoot(leaves, proofs);
+</code></pre>
+<p>Then the <code>i</code>th proof for the <code>i</code>th element can be verified like so:</p>
+<pre><code class="language-C++">  proofs[i].verify(root, leaves[i]);
+</code></pre>
+<p>Note that adding an element to the input set will change its root and invalidate all membership proof, thus in a typical
+usage scenario all the membership proof will be needed right after computing the root. </p>
+<p>If the memory usage is too high, it would be possible to trade speed for memory by iterating all the tree nodes and outputting the proofs one at a time. 
+This alternative would also support the use case where only some of the membership proofs are needed.</p>
+<h3 id="cryptographic-operations">Cryptographic operations</h3>
+<p>To obtain a <a href="merkleexample/classmerkle_1_1_hash/">Hash</a> from an object, use :</p>
+<pre><code class="language-C++">  // if all objects to be hashed are known upfront.
+  Hasher::apply(obj1, obj2, ...);
+  // if the state of the hash function needs to be kept around.
+  Hasher h = Hasher();
+  h.input(obj);
+  Hash ret = h.end();
+</code></pre>
+<p><a href="merkleexample/classmerkle_1_1_hasher/">Hasher</a> can hash any arithmetic type (<code>int</code>, <code>char</code>, etc) and array thereof in
+a single call to the underlying hash function. Non-contiguous containers require one call per element. Additionally,
+user-defined classes can support being hashed by inheriting <a href="merkleexample/classmerkle_1_1_hashable/">Hashable</a> and
+implementing <code>void addToHash(Hasher&amp; in) const</code>.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="merkleexample/namespacemerkle/" class="btn btn-neutral float-right" title="Merkle Namespace">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+      <span><a href="merkleexample/namespacemerkle/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = ".";</script>
+    <script src="js/theme_extra.js"></script>
+    <script src="js/theme.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
+
+<!--
+MkDocs version : 1.5.3
+Build Date UTC : 2024-01-04 07:00:49.782470+00:00
+-->

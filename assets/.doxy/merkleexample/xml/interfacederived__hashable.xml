@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="interfacederived__hashable" kind="interface" language="C++" prot="public">
+    <compoundname>derived_hashable</compoundname>
+    <includes refid="crypto_8hpp" local="no">crypto.hpp</includes>
+    <briefdescription>
+<para>Concept modelling types supporting hashing though addToHash(). </para>
+    </briefdescription>
+    <detaileddescription>
+<para>We do not use the <ref refid="interfaceimplements_add_to_hash" kindref="compound">implementsAddToHash</ref> directly because we would risk having external classes inadvertently implementing addToHash in unexpected ways. Other implementations are possible with different trade-offs, eg, CRTP, type tag, virtual class, etc. </para>
+    </detaileddescription>
+    <location file="MerkleLib/include/merklelib/crypto.hpp" line="70" column="1"/>
+    <listofallmembers>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

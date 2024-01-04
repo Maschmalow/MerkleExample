@@ -1,0 +1,143 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="namespacemerkle" kind="namespace" language="C++">
+    <compoundname>merkle</compoundname>
+    <innerclass refid="classmerkle_1_1_hashable" prot="public">merkle::Hashable</innerclass>
+    <innerclass refid="classmerkle_1_1_hasher" prot="public">merkle::Hasher</innerclass>
+    <innerclass refid="classmerkle_1_1_merkle_membership_proof" prot="public">merkle::MerkleMembershipProof</innerclass>
+    <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="namespacemerkle_1ab2e94778984fb87a71724478c0f9dc68" prot="public" static="no">
+        <type>std::array&lt; CryptoPP::byte, CryptoPP::SHA256::DIGESTSIZE &gt;</type>
+        <definition>using merkle::Hash =  std::array&lt;CryptoPP::byte, CryptoPP::SHA256::DIGESTSIZE&gt;</definition>
+        <argsstring></argsstring>
+        <name>Hash</name>
+        <qualifiedname>merkle::Hash</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MerkleLib/include/merklelib/crypto.hpp" line="24" column="5" bodyfile="MerkleLib/include/merklelib/crypto.hpp" bodystart="24" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="namespacemerkle_1ae800fe1c5395b5d341aa9e22fca01252" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>std::ranges::forward_range</type>
+            <declname>T</declname>
+            <defname>T</defname>
+          </param>
+          <param>
+            <type>std::forward_iterator</type>
+            <declname>P</declname>
+            <defname>P</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="namespacemerkle_1ab2e94778984fb87a71724478c0f9dc68" kindref="member">Hash</ref></type>
+        <definition>Hash merkle::computeMerkleRoot</definition>
+        <argsstring>(T &amp;&amp;leaves, const P proofs)</argsstring>
+        <name>computeMerkleRoot</name>
+        <qualifiedname>merkle::computeMerkleRoot</qualifiedname>
+        <param>
+          <type>T &amp;&amp;</type>
+          <declname>leaves</declname>
+        </param>
+        <param>
+          <type>const P</type>
+          <declname>proofs</declname>
+        </param>
+    <requiresclause>std::same_as&lt;MerkleMembershipProof, typename std::iterator_traits&lt;P&gt;::value_type&gt;    </requiresclause>
+        <briefdescription>
+<para>Compute a Merkle Tree root (with proof iterator). Computes the root of the Merkle tree containing all <computeroutput>leaves</computeroutput> and populates the <emphasis>pre-allocated</emphasis> container <computeroutput>proofs</computeroutput> with the corresponding membership proofs. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>leaves</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>range containing the set to be hashed. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>proofs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>iterator to the container to be filled with membership proofs. <emphasis>MUST</emphasis> be allocated with leaves.size() elements. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the root of the merkle tree </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MerkleLib/include/merklelib/merkle.hpp" line="68" column="10" bodyfile="MerkleLib/include/merklelib/merkle.hpp" bodystart="68" bodyend="93"/>
+      </memberdef>
+      <memberdef kind="function" id="namespacemerkle_1a6922fcdc342868a45e41f1b434aa3f66" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>std::ranges::forward_range</type>
+            <declname>T</declname>
+            <defname>T</defname>
+          </param>
+          <param>
+            <type>class P</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="namespacemerkle_1ab2e94778984fb87a71724478c0f9dc68" kindref="member">Hash</ref></type>
+        <definition>Hash merkle::computeMerkleRoot</definition>
+        <argsstring>(T &amp;&amp;leaves, P &amp;proofs)</argsstring>
+        <name>computeMerkleRoot</name>
+        <qualifiedname>merkle::computeMerkleRoot</qualifiedname>
+        <param>
+          <type>T &amp;&amp;</type>
+          <declname>leaves</declname>
+        </param>
+        <param>
+          <type>P &amp;</type>
+          <declname>proofs</declname>
+        </param>
+        <briefdescription>
+<para>Compute a Merkle Tree root (with proof container). Computes the root of the Merkle tree containing all <computeroutput>leaves</computeroutput> and populates <computeroutput>proofs</computeroutput> with the corresponding membership proofs. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>leaves</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>array containing the set to be hashed. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>proofs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>container to be filled with membership proofs. Will be reallocated before filling. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the root of the merkle tree </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MerkleLib/include/merklelib/merkle.hpp" line="104" column="10" bodyfile="MerkleLib/include/merklelib/merkle.hpp" bodystart="104" bodyend="107"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Project namespace</para>
+<para>Main namespace </para>
+    </detaileddescription>
+    <location file="MerkleLib/include/merklelib/crypto.hpp" line="19" column="1"/>
+  </compounddef>
+</doxygen>

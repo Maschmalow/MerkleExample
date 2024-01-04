@@ -1,0 +1,234 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="classmerkle_1_1_hasher" kind="class" language="C++" prot="public">
+    <compoundname>merkle::Hasher</compoundname>
+    <includes refid="crypto_8hpp" local="no">crypto.hpp</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classmerkle_1_1_hasher_1a69eb7f84bbbd8be666db055494e480c5" prot="private" static="no" mutable="no">
+        <type>CryptoPP::SHA256</type>
+        <definition>CryptoPP::SHA256 merkle::Hasher::hasher</definition>
+        <argsstring></argsstring>
+        <name>hasher</name>
+        <qualifiedname>merkle::Hasher::hasher</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MerkleLib/include/merklelib/crypto.hpp" line="87" column="26" bodyfile="MerkleLib/include/merklelib/crypto.hpp" bodystart="87" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classmerkle_1_1_hasher_1a9a88cc59845ccfa2484a9556b740a894" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class T</type>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classmerkle_1_1_hasher" kindref="compound">Hasher</ref> &amp;</type>
+        <definition>Hasher &amp; merkle::Hasher::inputRaw</definition>
+        <argsstring>(const T *ptr, std::size_t n)</argsstring>
+        <name>inputRaw</name>
+        <qualifiedname>merkle::Hasher::inputRaw</qualifiedname>
+        <param>
+          <type>const T *</type>
+          <declname>ptr</declname>
+        </param>
+        <param>
+          <type>std::size_t</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MerkleLib/include/merklelib/crypto.hpp" line="90" column="16" bodyfile="MerkleLib/include/merklelib/crypto.hpp" bodystart="90" bodyend="93"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classmerkle_1_1_hasher_1ae0d9b245a9d7c4cf2bbd1692051db66f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>merkle::Hasher::Hasher</definition>
+        <argsstring>()=default</argsstring>
+        <name>Hasher</name>
+        <qualifiedname>merkle::Hasher::Hasher</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MerkleLib/include/merklelib/crypto.hpp" line="96" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classmerkle_1_1_hasher_1a5b3aa3a77fb0fcc9438effda8d099387" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type><ref refid="interfacedirectly_hashable" kindref="compound">directlyHashable</ref></type>
+            <declname>T</declname>
+            <defname>T</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classmerkle_1_1_hasher" kindref="compound">Hasher</ref> &amp;</type>
+        <definition>Hasher &amp; merkle::Hasher::input</definition>
+        <argsstring>(const T &amp;in)</argsstring>
+        <name>input</name>
+        <qualifiedname>merkle::Hasher::input</qualifiedname>
+        <param>
+          <type>const T &amp;</type>
+          <declname>in</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>arithmetic type are <ref refid="interfacedirectly_hashable" kindref="compound">directlyHashable</ref> using the sizeof() operator. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MerkleLib/include/merklelib/crypto.hpp" line="103" column="16" bodyfile="MerkleLib/include/merklelib/crypto.hpp" bodystart="103" bodyend="105"/>
+      </memberdef>
+      <memberdef kind="function" id="classmerkle_1_1_hasher_1a5b3aa3a77fb0fcc9438effda8d099387" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type><ref refid="interfacecontiguous__hashable" kindref="compound">contiguous_hashable</ref></type>
+            <declname>T</declname>
+            <defname>T</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classmerkle_1_1_hasher" kindref="compound">Hasher</ref> &amp;</type>
+        <definition>Hasher &amp; merkle::Hasher::input</definition>
+        <argsstring>(const T &amp;in)</argsstring>
+        <name>input</name>
+        <qualifiedname>merkle::Hasher::input</qualifiedname>
+        <param>
+          <type>const T &amp;</type>
+          <declname>in</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The hashing of a contiguous array of <ref refid="conceptmerkle_1_1directly_hashable" kindref="compound">directlyHashable</ref> elements (<ref refid="interfacecontiguous__hashable" kindref="compound">contiguous_hashable</ref>) is done in a single call to the underlying hash function. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MerkleLib/include/merklelib/crypto.hpp" line="111" column="16" bodyfile="MerkleLib/include/merklelib/crypto.hpp" bodystart="111" bodyend="113"/>
+      </memberdef>
+      <memberdef kind="function" id="classmerkle_1_1_hasher_1a1afbb7fcb2c041d2fbb7f352c105bb06" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type><ref refid="interfaceiterable" kindref="compound">iterable</ref></type>
+            <declname>T</declname>
+            <defname>T</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classmerkle_1_1_hasher" kindref="compound">Hasher</ref> &amp;</type>
+        <definition>Hasher &amp; merkle::Hasher::input</definition>
+        <argsstring>(const T &amp;in)</argsstring>
+        <name>input</name>
+        <qualifiedname>merkle::Hasher::input</qualifiedname>
+        <param>
+          <type>const T &amp;</type>
+          <declname>in</declname>
+        </param>
+    <requiresclause>(!<ref refid="interfacecontiguous__hashable" kindref="compound">contiguous_hashable</ref>&lt;T&gt;)    </requiresclause>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Anything <ref refid="interfaceiterable" kindref="compound">iterable</ref> (excluding contiguous arrays of <ref refid="conceptmerkle_1_1directly_hashable" kindref="compound">directlyHashable</ref> elements) is hashed element by element. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MerkleLib/include/merklelib/crypto.hpp" line="120" column="16" bodyfile="MerkleLib/include/merklelib/crypto.hpp" bodystart="120" bodyend="125"/>
+      </memberdef>
+      <memberdef kind="function" id="classmerkle_1_1_hasher_1a5b3aa3a77fb0fcc9438effda8d099387" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type><ref refid="interfacederived__hashable" kindref="compound">derived_hashable</ref></type>
+            <declname>T</declname>
+            <defname>T</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="classmerkle_1_1_hasher" kindref="compound">Hasher</ref> &amp;</type>
+        <definition>Hasher &amp; merkle::Hasher::input</definition>
+        <argsstring>(const T &amp;in)</argsstring>
+        <name>input</name>
+        <qualifiedname>merkle::Hasher::input</qualifiedname>
+        <param>
+          <type>const T &amp;</type>
+          <declname>in</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A <ref refid="interfacederived__hashable" kindref="compound">derived_hashable</ref> instance calls its addToHash() member function. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MerkleLib/include/merklelib/crypto.hpp" line="132" column="16" bodyfile="MerkleLib/include/merklelib/crypto.hpp" bodystart="132" bodyend="135"/>
+      </memberdef>
+      <memberdef kind="function" id="classmerkle_1_1_hasher_1a37bbec5db993dba8d43abe8b829d9b9b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="namespacemerkle_1ab2e94778984fb87a71724478c0f9dc68" kindref="member">Hash</ref></type>
+        <definition>Hash merkle::Hasher::end</definition>
+        <argsstring>()</argsstring>
+        <name>end</name>
+        <qualifiedname>merkle::Hasher::end</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>End the hash inputs and return the hash value. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MerkleLib/include/merklelib/crypto.hpp" line="152" column="14" bodyfile="MerkleLib/include/merklelib/crypto.hpp" bodystart="152" bodyend="156"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classmerkle_1_1_hasher_1ad6d312bb03364e347fa0af293e5f631d" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class...</type>
+            <declname>TArgs</declname>
+            <defname>TArgs</defname>
+          </param>
+        </templateparamlist>
+        <type><ref refid="namespacemerkle_1ab2e94778984fb87a71724478c0f9dc68" kindref="member">Hash</ref></type>
+        <definition>static Hash merkle::Hasher::apply</definition>
+        <argsstring>(const TArgs &amp;...ins)</argsstring>
+        <name>apply</name>
+        <qualifiedname>merkle::Hasher::apply</qualifiedname>
+        <param>
+          <type>const TArgs &amp;...</type>
+          <declname>ins</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Static function to hash values in one call. Generates one call to the underlying hash function per input argument. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MerkleLib/include/merklelib/crypto.hpp" line="142" column="21" bodyfile="MerkleLib/include/merklelib/crypto.hpp" bodystart="142" bodyend="146"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>SHA256 instance. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>A <ref refid="classmerkle_1_1_hasher" kindref="compound">Hasher</ref> instance holds the state of the hash function. Use <ref refid="classmerkle_1_1_hasher_1a5b3aa3a77fb0fcc9438effda8d099387" kindref="member">input()</ref> to feed data to the hash function and <ref refid="classmerkle_1_1_hasher_1a37bbec5db993dba8d43abe8b829d9b9b" kindref="member">end()</ref> to get the hash. The hash can also be directly computed using the static member <ref refid="classmerkle_1_1_hasher_1ad6d312bb03364e347fa0af293e5f631d" kindref="member">apply()</ref>. </para>
+    </detaileddescription>
+    <location file="MerkleLib/include/merklelib/crypto.hpp" line="85" column="5" bodyfile="MerkleLib/include/merklelib/crypto.hpp" bodystart="85" bodyend="158"/>
+    <listofallmembers>
+      <member refid="classmerkle_1_1_hasher_1ad6d312bb03364e347fa0af293e5f631d" prot="public" virt="non-virtual"><scope>merkle::Hasher</scope><name>apply</name></member>
+      <member refid="classmerkle_1_1_hasher_1a37bbec5db993dba8d43abe8b829d9b9b" prot="public" virt="non-virtual"><scope>merkle::Hasher</scope><name>end</name></member>
+      <member refid="classmerkle_1_1_hasher_1a69eb7f84bbbd8be666db055494e480c5" prot="private" virt="non-virtual"><scope>merkle::Hasher</scope><name>hasher</name></member>
+      <member refid="classmerkle_1_1_hasher_1ae0d9b245a9d7c4cf2bbd1692051db66f" prot="public" virt="non-virtual"><scope>merkle::Hasher</scope><name>Hasher</name></member>
+      <member refid="classmerkle_1_1_hasher_1a5b3aa3a77fb0fcc9438effda8d099387" prot="public" virt="non-virtual"><scope>merkle::Hasher</scope><name>input</name></member>
+      <member refid="classmerkle_1_1_hasher_1a5b3aa3a77fb0fcc9438effda8d099387" prot="public" virt="non-virtual"><scope>merkle::Hasher</scope><name>input</name></member>
+      <member refid="classmerkle_1_1_hasher_1a1afbb7fcb2c041d2fbb7f352c105bb06" prot="public" virt="non-virtual"><scope>merkle::Hasher</scope><name>input</name></member>
+      <member refid="classmerkle_1_1_hasher_1a5b3aa3a77fb0fcc9438effda8d099387" prot="public" virt="non-virtual"><scope>merkle::Hasher</scope><name>input</name></member>
+      <member refid="classmerkle_1_1_hasher_1a9a88cc59845ccfa2484a9556b740a894" prot="private" virt="non-virtual"><scope>merkle::Hasher</scope><name>inputRaw</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

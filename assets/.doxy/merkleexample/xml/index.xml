@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.10.0" xml:lang="en-US">
+  <compound refid="interfacecontiguous__hashable" kind="interface"><name>contiguous_hashable</name>
+  </compound>
+  <compound refid="interfacederived__hashable" kind="interface"><name>derived_hashable</name>
+  </compound>
+  <compound refid="interfacedirectly_hashable" kind="interface"><name>directlyHashable</name>
+  </compound>
+  <compound refid="classmerkle_1_1_hash" kind="class"><name>merkle::Hash</name>
+  </compound>
+  <compound refid="classmerkle_1_1_hashable" kind="class"><name>merkle::Hashable</name>
+  </compound>
+  <compound refid="classmerkle_1_1_hasher" kind="class"><name>merkle::Hasher</name>
+    <member refid="classmerkle_1_1_hasher_1a69eb7f84bbbd8be666db055494e480c5" kind="variable"><name>hasher</name></member>
+    <member refid="classmerkle_1_1_hasher_1a9a88cc59845ccfa2484a9556b740a894" kind="function"><name>inputRaw</name></member>
+    <member refid="classmerkle_1_1_hasher_1ae0d9b245a9d7c4cf2bbd1692051db66f" kind="function"><name>Hasher</name></member>
+    <member refid="classmerkle_1_1_hasher_1a5b3aa3a77fb0fcc9438effda8d099387" kind="function"><name>input</name></member>
+    <member refid="classmerkle_1_1_hasher_1a5b3aa3a77fb0fcc9438effda8d099387" kind="function"><name>input</name></member>
+    <member refid="classmerkle_1_1_hasher_1a1afbb7fcb2c041d2fbb7f352c105bb06" kind="function"><name>input</name></member>
+    <member refid="classmerkle_1_1_hasher_1a5b3aa3a77fb0fcc9438effda8d099387" kind="function"><name>input</name></member>
+    <member refid="classmerkle_1_1_hasher_1a37bbec5db993dba8d43abe8b829d9b9b" kind="function"><name>end</name></member>
+    <member refid="classmerkle_1_1_hasher_1ad6d312bb03364e347fa0af293e5f631d" kind="function"><name>apply</name></member>
+  </compound>
+  <compound refid="interfaceimplements_add_to_hash" kind="interface"><name>implementsAddToHash</name>
+  </compound>
+  <compound refid="interfaceiterable" kind="interface"><name>iterable</name>
+  </compound>
+  <compound refid="classmerkle_1_1_merkle_membership_proof" kind="class"><name>merkle::MerkleMembershipProof</name>
+    <member refid="classmerkle_1_1_merkle_membership_proof_1acd2066d1c80db08ed30048b60d3ea7f4" kind="enum"><name>NodeChoice</name></member>
+    <member refid="classmerkle_1_1_merkle_membership_proof_1acd2066d1c80db08ed30048b60d3ea7f4a684d325a7303f52e64011467ff5c5758" kind="enumvalue"><name>LEFT</name></member>
+    <member refid="classmerkle_1_1_merkle_membership_proof_1acd2066d1c80db08ed30048b60d3ea7f4a21507b40c80068eda19865706fdc2403" kind="enumvalue"><name>RIGHT</name></member>
+    <member refid="classmerkle_1_1_merkle_membership_proof_1a373f5857d91c1496ae070e321ef3b493" kind="variable"><name>path</name></member>
+    <member refid="classmerkle_1_1_merkle_membership_proof_1a1fd7791a97e181aaa57793a86ee635bc" kind="function"><name>MerkleMembershipProof</name></member>
+    <member refid="classmerkle_1_1_merkle_membership_proof_1a5ff2f0e3308c26f91d3769861fe0ece6" kind="function"><name>append</name></member>
+    <member refid="classmerkle_1_1_merkle_membership_proof_1a9ddcb1eefd2a7414a5d131e354416df0" kind="function"><name>verify</name></member>
+  </compound>
+  <compound refid="structmerkle_1_1_merkle_membership_proof_1_1_node_hash" kind="struct"><name>merkle::MerkleMembershipProof::NodeHash</name>
+    <member refid="structmerkle_1_1_merkle_membership_proof_1_1_node_hash_1add5eecbf2eaf321b864dfa747dbd0091" kind="variable"><name>value</name></member>
+    <member refid="structmerkle_1_1_merkle_membership_proof_1_1_node_hash_1a3230670f7f08054a5a74c43936f34e0b" kind="variable"><name>side</name></member>
+  </compound>
+  <compound refid="conceptmerkle_1_1contiguous__hashable" kind="concept"><name>merkle::contiguous_hashable</name>
+  </compound>
+  <compound refid="conceptmerkle_1_1derived__hashable" kind="concept"><name>merkle::derived_hashable</name>
+  </compound>
+  <compound refid="conceptmerkle_1_1directly_hashable" kind="concept"><name>merkle::directlyHashable</name>
+  </compound>
+  <compound refid="conceptmerkle_1_1implements_add_to_hash" kind="concept"><name>merkle::implementsAddToHash</name>
+  </compound>
+  <compound refid="conceptmerkle_1_1iterable" kind="concept"><name>merkle::iterable</name>
+  </compound>
+  <compound refid="namespacemerkle" kind="namespace"><name>merkle</name>
+    <member refid="namespacemerkle_1ab2e94778984fb87a71724478c0f9dc68" kind="typedef"><name>Hash</name></member>
+    <member refid="namespacemerkle_1ae800fe1c5395b5d341aa9e22fca01252" kind="function"><name>computeMerkleRoot</name></member>
+    <member refid="namespacemerkle_1a6922fcdc342868a45e41f1b434aa3f66" kind="function"><name>computeMerkleRoot</name></member>
+  </compound>
+  <compound refid="crypto_8hpp" kind="file"><name>crypto.hpp</name>
+  </compound>
+  <compound refid="merkle_8hpp" kind="file"><name>merkle.hpp</name>
+  </compound>
+  <compound refid="dir_e5730d5bb186076c7325630a058c9a00" kind="dir"><name>MerkleLib/include</name>
+  </compound>
+  <compound refid="dir_1719d5dff123115991d6e0babc0b7b32" kind="dir"><name>MerkleLib</name>
+  </compound>
+  <compound refid="dir_5209bc8e00a5022dcb375bc5a32c3450" kind="dir"><name>MerkleLib/include/merklelib</name>
+  </compound>
+</doxygenindex>

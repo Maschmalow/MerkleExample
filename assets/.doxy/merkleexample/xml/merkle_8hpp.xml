@@ -1,0 +1,145 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="merkle_8hpp" kind="file" language="C++">
+    <compoundname>merkle.hpp</compoundname>
+    <includes local="no">numeric</includes>
+    <includes refid="crypto_8hpp" local="yes">merklelib/crypto.hpp</includes>
+    <incdepgraph>
+      <node id="3">
+        <label>merklelib/crypto.hpp</label>
+        <link refid="crypto_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>MerkleLib/include/merklelib/merkle.hpp</label>
+        <link refid="merkle_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>array</label>
+      </node>
+      <node id="4">
+        <label>cryptlib.h</label>
+      </node>
+      <node id="2">
+        <label>numeric</label>
+      </node>
+      <node id="8">
+        <label>optional</label>
+      </node>
+      <node id="7">
+        <label>ranges</label>
+      </node>
+      <node id="5">
+        <label>sha.h</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="classmerkle_1_1_merkle_membership_proof" prot="public">merkle::MerkleMembershipProof</innerclass>
+    <innerclass refid="structmerkle_1_1_merkle_membership_proof_1_1_node_hash" prot="private">merkle::MerkleMembershipProof::NodeHash</innerclass>
+    <innernamespace refid="namespacemerkle">merkle</innernamespace>
+    <briefdescription>
+<para>Merkle tree related functions and classes. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;numeric&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="crypto_8hpp" kindref="compound">merklelib/crypto.hpp</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacemerkle" kindref="compound">merkle</ref><sp/>{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21" refid="classmerkle_1_1_merkle_membership_proof" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classmerkle_1_1_merkle_membership_proof" kindref="compound">MerkleMembershipProof</ref><sp/>{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="23" refid="classmerkle_1_1_merkle_membership_proof_1acd2066d1c80db08ed30048b60d3ea7f4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="classmerkle_1_1_merkle_membership_proof_1acd2066d1c80db08ed30048b60d3ea7f4" kindref="member">NodeChoice</ref><sp/>{</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classmerkle_1_1_merkle_membership_proof_1acd2066d1c80db08ed30048b60d3ea7f4a684d325a7303f52e64011467ff5c5758" kindref="member">LEFT</ref>,<sp/><ref refid="classmerkle_1_1_merkle_membership_proof_1acd2066d1c80db08ed30048b60d3ea7f4a21507b40c80068eda19865706fdc2403" kindref="member">RIGHT</ref></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27" refid="classmerkle_1_1_merkle_membership_proof_1a1fd7791a97e181aaa57793a86ee635bc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classmerkle_1_1_merkle_membership_proof_1a1fd7791a97e181aaa57793a86ee635bc" kindref="member">MerkleMembershipProof</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29" refid="classmerkle_1_1_merkle_membership_proof_1a5ff2f0e3308c26f91d3769861fe0ece6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classmerkle_1_1_merkle_membership_proof_1a5ff2f0e3308c26f91d3769861fe0ece6" kindref="member">append</ref>(<ref refid="namespacemerkle_1ab2e94778984fb87a71724478c0f9dc68" kindref="member">Hash</ref><sp/>h,<sp/><ref refid="classmerkle_1_1_merkle_membership_proof_1acd2066d1c80db08ed30048b60d3ea7f4" kindref="member">NodeChoice</ref><sp/>c)<sp/>{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>path.push_back({.value=h,<sp/>.side=c});</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline lineno="37" refid="classmerkle_1_1_merkle_membership_proof_1a9ddcb1eefd2a7414a5d131e354416df0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classmerkle_1_1_merkle_membership_proof_1a9ddcb1eefd2a7414a5d131e354416df0" kindref="member">verify</ref>(<ref refid="namespacemerkle_1ab2e94778984fb87a71724478c0f9dc68" kindref="member">Hash</ref><sp/>root,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>T&amp;<sp/>elem)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>recomputePath<sp/>=<sp/>[](</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespacemerkle_1ab2e94778984fb87a71724478c0f9dc68" kindref="member">Hash</ref>&amp;<sp/>acc,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>NodeHash&amp;<sp/>proof)<sp/>-&gt;<sp/><ref refid="namespacemerkle_1ab2e94778984fb87a71724478c0f9dc68" kindref="member">Hash</ref><sp/>{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(proof.side<sp/>==<sp/><ref refid="classmerkle_1_1_merkle_membership_proof_1acd2066d1c80db08ed30048b60d3ea7f4a21507b40c80068eda19865706fdc2403" kindref="member">NodeChoice::RIGHT</ref>)<sp/></highlight><highlight class="comment">//<sp/>the<sp/>hash<sp/>value<sp/>in<sp/>path<sp/>is<sp/>on<sp/>the<sp/>right</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classmerkle_1_1_hasher" kindref="compound">Hasher</ref>().<ref refid="classmerkle_1_1_hasher_1a5b3aa3a77fb0fcc9438effda8d099387" kindref="member">input</ref>(acc).<ref refid="classmerkle_1_1_hasher_1a5b3aa3a77fb0fcc9438effda8d099387" kindref="member">input</ref>(proof.value).<ref refid="classmerkle_1_1_hasher_1a37bbec5db993dba8d43abe8b829d9b9b" kindref="member">end</ref>();</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="comment">//currentNode.second<sp/>==<sp/>NodeChoice::LEFT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classmerkle_1_1_hasher" kindref="compound">Hasher</ref>().<ref refid="classmerkle_1_1_hasher_1a5b3aa3a77fb0fcc9438effda8d099387" kindref="member">input</ref>(proof.value).<ref refid="classmerkle_1_1_hasher_1a5b3aa3a77fb0fcc9438effda8d099387" kindref="member">input</ref>(acc).<ref refid="classmerkle_1_1_hasher_1a37bbec5db993dba8d43abe8b829d9b9b" kindref="member">end</ref>();</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::accumulate(path.begin(),<sp/>path.end(),<sp/><ref refid="classmerkle_1_1_hasher_1ad6d312bb03364e347fa0af293e5f631d" kindref="member">Hasher::apply</ref>(elem),<sp/>recomputePath)<sp/>==<sp/>root;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">NodeHash<sp/>{</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacemerkle_1ab2e94778984fb87a71724478c0f9dc68" kindref="member">Hash</ref><sp/>value;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classmerkle_1_1_merkle_membership_proof_1acd2066d1c80db08ed30048b60d3ea7f4" kindref="member">NodeChoice</ref><sp/>side;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::vector&lt;NodeHash&gt;<sp/>path;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;std::ranges::forward_range<sp/>T,<sp/>std::forward_iterator<sp/>P&gt;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">requires</highlight><highlight class="normal"><sp/>std::same_as&lt;MerkleMembershipProof,<sp/>typename<sp/>std::iterator_traits&lt;P&gt;::value_type&gt;</highlight></codeline>
+<codeline lineno="68" refid="namespacemerkle_1ae800fe1c5395b5d341aa9e22fca01252" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacemerkle_1ab2e94778984fb87a71724478c0f9dc68" kindref="member">Hash</ref><sp/><ref refid="namespacemerkle_1ae800fe1c5395b5d341aa9e22fca01252" kindref="member">computeMerkleRoot</ref>(T&amp;&amp;<sp/>leaves,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>P<sp/>proofs)<sp/>{</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal">&amp;<sp/>begin<sp/>=<sp/>std::ranges::begin(leaves),<sp/>end<sp/>=<sp/>std::ranges::end(leaves);<sp/></highlight><highlight class="comment">//mostly<sp/>for<sp/>readability</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(std::ranges::size(leaves)<sp/>==<sp/>1)<sp/>{</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classmerkle_1_1_hasher_1ad6d312bb03364e347fa0af293e5f631d" kindref="member">Hasher::apply</ref>(*begin);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>note<sp/>that<sp/>there<sp/>is<sp/>no<sp/>*explicit*<sp/>requirement<sp/>in<sp/>std::random_access_iterator&lt;&gt;<sp/>to<sp/>support<sp/>division<sp/>on<sp/>iter_diff<sp/>(which<sp/>midpoint<sp/>does).</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>But<sp/>there<sp/>are<sp/>other<sp/>parts,<sp/>eg.,<sp/>in<sp/>std::lower_bound()<sp/>where<sp/>this<sp/>is<sp/>done<sp/>*and*<sp/>random_access_iterator<sp/>guarantees<sp/>constant<sp/>time<sp/>operation.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>middle<sp/>=<sp/>begin<sp/>+<sp/>(end<sp/>-<sp/>begin)<sp/>/<sp/>2;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacemerkle_1ab2e94778984fb87a71724478c0f9dc68" kindref="member">Hash</ref><sp/>left<sp/>=<sp/><ref refid="namespacemerkle_1ae800fe1c5395b5d341aa9e22fca01252" kindref="member">computeMerkleRoot</ref>(std::ranges::subrange(begin,<sp/>middle),<sp/>proofs);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacemerkle_1ab2e94778984fb87a71724478c0f9dc68" kindref="member">Hash</ref><sp/>right<sp/>=<sp/><ref refid="namespacemerkle_1ae800fe1c5395b5d341aa9e22fca01252" kindref="member">computeMerkleRoot</ref>(std::ranges::subrange(middle,<sp/>end),<sp/>proofs<sp/>+<sp/>(middle<sp/>-<sp/>begin));</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>P<sp/>it<sp/>=<sp/>proofs;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>begin;<sp/>i<sp/>&lt;<sp/>middle;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>it-&gt;append(right,<sp/><ref refid="classmerkle_1_1_merkle_membership_proof_1acd2066d1c80db08ed30048b60d3ea7f4a21507b40c80068eda19865706fdc2403" kindref="member">MerkleMembershipProof::NodeChoice::RIGHT</ref>);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>it++;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>middle;<sp/>i<sp/>&lt;<sp/>end;<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>it-&gt;append(left,<sp/><ref refid="classmerkle_1_1_merkle_membership_proof_1acd2066d1c80db08ed30048b60d3ea7f4a684d325a7303f52e64011467ff5c5758" kindref="member">MerkleMembershipProof::NodeChoice::LEFT</ref>);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>it++;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classmerkle_1_1_hasher" kindref="compound">Hasher</ref>().<ref refid="classmerkle_1_1_hasher_1a5b3aa3a77fb0fcc9438effda8d099387" kindref="member">input</ref>(left).<ref refid="classmerkle_1_1_hasher_1a5b3aa3a77fb0fcc9438effda8d099387" kindref="member">input</ref>(right).<ref refid="classmerkle_1_1_hasher_1a37bbec5db993dba8d43abe8b829d9b9b" kindref="member">end</ref>();</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;std::ranges::forward_range<sp/>T,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>P&gt;</highlight></codeline>
+<codeline lineno="104" refid="namespacemerkle_1a6922fcdc342868a45e41f1b434aa3f66" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacemerkle_1ab2e94778984fb87a71724478c0f9dc68" kindref="member">Hash</ref><sp/><ref refid="namespacemerkle_1ae800fe1c5395b5d341aa9e22fca01252" kindref="member">computeMerkleRoot</ref>(T&amp;&amp;<sp/>leaves,<sp/>P&amp;<sp/>proofs)<sp/>{</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>proofs<sp/>=<sp/>P(leaves.size());</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespacemerkle_1ae800fe1c5395b5d341aa9e22fca01252" kindref="member">computeMerkleRoot</ref>(leaves,<sp/>proofs.begin());</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="MerkleLib/include/merklelib/merkle.hpp"/>
+  </compounddef>
+</doxygen>

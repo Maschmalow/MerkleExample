@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="classmerkle_1_1_hashable" kind="class" language="C++" prot="public">
+    <compoundname>merkle::Hashable</compoundname>
+    <includes refid="crypto_8hpp" local="no">crypto.hpp</includes>
+    <briefdescription>
+<para>Inherit this class and implement addToHash() to define hashing of a custom class. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>To use it on your class, inherit <ref refid="classmerkle_1_1_hashable" kindref="compound">Hashable</ref> and implement &quot;void addToHash(Hasher &amp;in) const&quot;. </para>
+    </detaileddescription>
+    <location file="MerkleLib/include/merklelib/crypto.hpp" line="68" column="5" bodyfile="MerkleLib/include/merklelib/crypto.hpp" bodystart="68" bodyend="68"/>
+    <listofallmembers>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.10.0" xml:lang="en-US">
+  <compounddef id="interfacedirectly_hashable" kind="interface" language="C++" prot="public">
+    <compoundname>directlyHashable</compoundname>
+    <includes refid="crypto_8hpp" local="no">crypto.hpp</includes>
+    <briefdescription>
+<para>Concept modelling types that can be hashed as is, using sifzeof. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><computeroutput><ref refid="interfacedirectly_hashable" kindref="compound">directlyHashable</ref> = std::is_arithmetic_v&lt;T&gt;;</computeroutput> </para>
+    </detaileddescription>
+    <location file="MerkleLib/include/merklelib/crypto.hpp" line="29" column="1"/>
+    <listofallmembers>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

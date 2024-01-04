@@ -78,7 +78,7 @@
         </inbodydescription>
         <location file="MerkleLib/include/merklelib/merkle.hpp" line="68" column="10" bodyfile="MerkleLib/include/merklelib/merkle.hpp" bodystart="68" bodyend="93"/>
       </memberdef>
-      <memberdef kind="function" id="namespacemerkle_1a6922fcdc342868a45e41f1b434aa3f66" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="namespacemerkle_1a0173177d831d63cbbc700d288fc2a987" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
             <type>std::ranges::forward_range</type>
@@ -102,6 +102,7 @@
           <type>P &amp;</type>
           <declname>proofs</declname>
         </param>
+    <requiresclause>std::forward_iterator&lt;std::ranges::iterator_t&lt;P&gt;&gt;    </requiresclause>
         <briefdescription>
 <para>Compute a Merkle Tree root (with proof container). Computes the root of the Merkle tree containing all <computeroutput>leaves</computeroutput> and populates <computeroutput>proofs</computeroutput> with the corresponding membership proofs. </para>
         </briefdescription>
@@ -129,14 +130,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="MerkleLib/include/merklelib/merkle.hpp" line="104" column="10" bodyfile="MerkleLib/include/merklelib/merkle.hpp" bodystart="104" bodyend="107"/>
+        <location file="MerkleLib/include/merklelib/merkle.hpp" line="105" column="10" bodyfile="MerkleLib/include/merklelib/merkle.hpp" bodystart="105" bodyend="108"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
 <para>Project namespace</para>
-<para>Main namespace </para>
+<para>MerkleLib namespace </para>
     </detaileddescription>
     <location file="MerkleLib/include/merklelib/crypto.hpp" line="19" column="1"/>
   </compounddef>

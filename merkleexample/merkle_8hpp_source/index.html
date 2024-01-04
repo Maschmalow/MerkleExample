@@ -153,6 +153,7 @@ namespace merkle {
 
 
     template&lt;std::ranges::forward_range T, class P&gt;
+        requires std::forward_iterator&lt;std::ranges::iterator_t&lt;P&gt;&gt;
     Hash computeMerkleRoot(T&amp;&amp; leaves, P&amp; proofs) {
         proofs = P(leaves.size());
         return computeMerkleRoot(leaves, proofs.begin());

@@ -51,7 +51,7 @@
   <compound refid="namespacemerkle" kind="namespace"><name>merkle</name>
     <member refid="namespacemerkle_1ab2e94778984fb87a71724478c0f9dc68" kind="typedef"><name>Hash</name></member>
     <member refid="namespacemerkle_1ae800fe1c5395b5d341aa9e22fca01252" kind="function"><name>computeMerkleRoot</name></member>
-    <member refid="namespacemerkle_1a6922fcdc342868a45e41f1b434aa3f66" kind="function"><name>computeMerkleRoot</name></member>
+    <member refid="namespacemerkle_1a0173177d831d63cbbc700d288fc2a987" kind="function"><name>computeMerkleRoot</name></member>
   </compound>
   <compound refid="crypto_8hpp" kind="file"><name>crypto.hpp</name>
   </compound>

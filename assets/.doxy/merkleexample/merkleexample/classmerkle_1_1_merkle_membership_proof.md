@@ -147,7 +147,7 @@ inline bool merkle::MerkleMembershipProof::verify (
 
 
 
-return true iff this class instance is a valid membership proof for `elem` against the set digest `root` 
+Return true iff this class instance is a valid membership proof for `elem` against the set digest `root`. 
 
 
         

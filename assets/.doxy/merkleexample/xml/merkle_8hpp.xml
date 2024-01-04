@@ -131,14 +131,15 @@
 <codeline lineno="94"><highlight class="normal"></highlight></codeline>
 <codeline lineno="95"><highlight class="normal"></highlight></codeline>
 <codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;std::ranges::forward_range<sp/>T,<sp/></highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>P&gt;</highlight></codeline>
-<codeline lineno="104" refid="namespacemerkle_1a6922fcdc342868a45e41f1b434aa3f66" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacemerkle_1ab2e94778984fb87a71724478c0f9dc68" kindref="member">Hash</ref><sp/><ref refid="namespacemerkle_1ae800fe1c5395b5d341aa9e22fca01252" kindref="member">computeMerkleRoot</ref>(T&amp;&amp;<sp/>leaves,<sp/>P&amp;<sp/>proofs)<sp/>{</highlight></codeline>
-<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>proofs<sp/>=<sp/>P(leaves.size());</highlight></codeline>
-<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespacemerkle_1ae800fe1c5395b5d341aa9e22fca01252" kindref="member">computeMerkleRoot</ref>(leaves,<sp/>proofs.begin());</highlight></codeline>
-<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">requires</highlight><highlight class="normal"><sp/>std::forward_iterator&lt;std::ranges::iterator_t&lt;P&gt;&gt;</highlight></codeline>
+<codeline lineno="105" refid="namespacemerkle_1a0173177d831d63cbbc700d288fc2a987" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacemerkle_1ab2e94778984fb87a71724478c0f9dc68" kindref="member">Hash</ref><sp/><ref refid="namespacemerkle_1ae800fe1c5395b5d341aa9e22fca01252" kindref="member">computeMerkleRoot</ref>(T&amp;&amp;<sp/>leaves,<sp/>P&amp;<sp/>proofs)<sp/>{</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>proofs<sp/>=<sp/>P(leaves.size());</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="namespacemerkle_1ae800fe1c5395b5d341aa9e22fca01252" kindref="member">computeMerkleRoot</ref>(leaves,<sp/>proofs.begin());</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="109"><highlight class="normal"></highlight></codeline>
-<codeline lineno="110"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
     </programlisting>
     <location file="MerkleLib/include/merklelib/merkle.hpp"/>
   </compounddef>

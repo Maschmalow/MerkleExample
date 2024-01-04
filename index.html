@@ -92,14 +92,14 @@ for convenience.</p>
 <p>This library is header-only, which is required anyway because almost all the code is templated.
 All the code is in the namespace <a href="merkleexample/namespacemerkle/">merkle</a></p>
 <ul>
-<li><a href="merkleexample/crypto_8hpp/">crypto.hpp</a> contains all crypto related code, in this case it is merely a wrapper
-  around cryptopp hash</li>
-<li><a href="merkleexample/merkle_8hpp/">merkle.hpp</a> contains the library code.</li>
+<li><a href="merkleexample/crypto_8hpp/">crypto.hpp</a> contains all crypto related code, in this case a wrapper
+  around cryptopp hashing.</li>
+<li><a href="merkleexample/merkle_8hpp/">merkle.hpp</a> contains the code co compute Merkle trees and verify membership proofs.</li>
 </ul>
 <h2 id="usage">Usage</h2>
 <h3 id="merkle-algorithms">Merkle algorithms</h3>
 <p>The main algorithm to compute the root of a Merkle tree is <a href="merkleexample/namespacemerkle/#public-functions">computeMerkleRoot()</a>. This algorithm requires an output
-container to receive the membership proofs for all elements.</p>
+container to receive the <a href="merkleexample/classmerkle_1_1_merkle_membership_proof/">MerkleMembershipProof</a> for all elements.</p>
 <pre><code class="language-C++">  std::vector&lt;int&gt; leaves{ 0, 1, 2 };
   std::vector&lt;MerkleMembershipProof&gt; proofs;
   Hash root = computeMerkleRoot(leaves, proofs);
@@ -171,5 +171,5 @@ implementing <code>void addToHash(Hasher&amp; in) const</code>.</p>
 
 <!--
 MkDocs version : 1.5.3
-Build Date UTC : 2024-01-04 07:00:49.782470+00:00
+Build Date UTC : 2024-01-04 07:21:03.187720+00:00
 -->

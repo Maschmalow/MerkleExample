@@ -8,7 +8,7 @@
 
 
 
-_Concept modelling types implementing addToHash()_ 
+_Concept modelling types implementing addToHash()._ 
 
 * `#include <crypto.hpp>`
 

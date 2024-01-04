@@ -142,7 +142,7 @@ inline Hasher & merkle::Hasher::input (
 
 
 
-arithmetic type are [**directlyHashable**](interfacedirectly_hashable.md) using the sizeof() operator. 
+Arithmetic type are [**directlyHashable**](interfacedirectly_hashable.md) using the sizeof() operator. 
 
 
         

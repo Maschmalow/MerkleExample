@@ -4,7 +4,7 @@
     <compoundname>implementsAddToHash</compoundname>
     <includes refid="crypto_8hpp" local="no">crypto.hpp</includes>
     <briefdescription>
-<para>Concept modelling types implementing addToHash() </para>
+<para>Concept modelling types implementing addToHash(). </para>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>

@@ -107,7 +107,7 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>return true iff this class instance is a valid membership proof for <computeroutput>elem</computeroutput> against the set digest <computeroutput>root</computeroutput> </para>
+<para>Return true iff this class instance is a valid membership proof for <computeroutput>elem</computeroutput> against the set digest <computeroutput>root</computeroutput>. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>

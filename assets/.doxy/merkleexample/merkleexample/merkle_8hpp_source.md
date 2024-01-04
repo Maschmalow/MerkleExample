@@ -84,6 +84,7 @@ namespace merkle {
 
 
     template<std::ranges::forward_range T, class P>
+        requires std::forward_iterator<std::ranges::iterator_t<P>>
     Hash computeMerkleRoot(T&& leaves, P& proofs) {
         proofs = P(leaves.size());
         return computeMerkleRoot(leaves, proofs.begin());

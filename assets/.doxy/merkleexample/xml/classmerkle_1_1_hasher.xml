@@ -83,7 +83,7 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>arithmetic type are <ref refid="interfacedirectly_hashable" kindref="compound">directlyHashable</ref> using the sizeof() operator. </para>
+<para>Arithmetic type are <ref refid="interfacedirectly_hashable" kindref="compound">directlyHashable</ref> using the sizeof() operator. </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>

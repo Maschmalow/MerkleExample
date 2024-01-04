@@ -99,7 +99,7 @@
 Project namespace
 
 
-Main namespace 
+MerkleLib namespace 
 
 
     

@@ -2,7 +2,7 @@
 
 ## Build
 
-The project is build with CMake, external dependencies are kept as git submodules.
+The project is built with CMake, external dependencies are kept as git submodules.
 To clone this repo with the submodule, run `git clone --recurse-submodules git@github.com:Maschmalow/StakeCube.git`.
 If the repository is already cloned, run `git submodule update --init --recursive` to pull the submodules.
 
@@ -18,8 +18,8 @@ The documentation can be built locally with MkDocs. To do so, install [Mkdocs](h
 
 ## Documentation
 
-See [MerkleExample.github.io](https://MerkleExample.github.io) for the online documentation. Alternatively, you can directly browse
-the markdown documentation ins [docs/index.md](docs/index.md).
+See [maschmalow.github.io/MerkleExample/](https://maschmalow.github.io/MerkleExample/) for the online documentation. Alternatively, you can directly browse
+the markdown documentation in [docs/index.md](docs/index.md).
 
  - [docs](docs) contains the documentation.
  - [external](external) all external dependencies, ie, boost, Catch2 and cryptopp.

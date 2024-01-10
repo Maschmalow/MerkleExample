@@ -10,7 +10,7 @@ All the code is in the namespace [merkle](merkleexample/namespacemerkle.md)
 
 - [crypto.hpp](merkleexample/crypto_8hpp.md) contains all crypto related code, in this case a wrapper
   around cryptopp hashing.
-- [merkle.hpp](merkleexample/merkle_8hpp.md) contains the code co compute Merkle trees and verify membership proofs.
+- [merkle.hpp](merkleexample/merkle_8hpp.md) contains the code to compute Merkle trees and verify membership proofs.
 
 ## Usage
 
@@ -32,7 +32,7 @@ Then the `i`th proof for the `i`th element can be verified like so:
 ```
 
 Note that adding an element to the input set will change its root and invalidate all membership proof, thus in a typical
-usage scenario all the membership proof will be needed right after computing the root. 
+usage scenario all the membership proofs will be needed right after computing the root. 
 
 If the memory usage is too high, it would be possible to trade speed for memory by iterating all the tree nodes and outputting the proofs one at a time. 
 This alternative would also support the use case where only some of the membership proofs are needed.
